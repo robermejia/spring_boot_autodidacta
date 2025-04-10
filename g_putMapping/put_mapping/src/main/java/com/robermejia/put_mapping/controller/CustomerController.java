@@ -1,4 +1,4 @@
-package com.robermejia.post_mapping.controller;
+package com.robermejia.put_mapping.controller;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,10 +7,11 @@ import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.robermejia.post_mapping.model.Customer;
+import com.robermejia.put_mapping.model.Customer;
 
 @RestController
 public class CustomerController {
@@ -43,4 +44,18 @@ public class CustomerController {
         return customer;
     }
 
+    @PutMapping("/clientes")
+    public Customer putCliente(@RequestBody Customer customer){
+        for (Customer c : customers) {
+            if (c.getID() == customer.getID()) {
+                c.setName(customer.getName());
+                c.setUsername(customer.getUsername());
+                c.setPassword(customer.getPassword());
+                return c;
+            }
+        }
+        return null;
+    }
+
 }
+
