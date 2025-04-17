@@ -81,8 +81,8 @@ public class CustomerController {
         for (Customer c : customers) {
             if (c.getID() == id) {
                 customers.remove(c);
+                return c;
             }
-            return c;
         }
         return null;
     }

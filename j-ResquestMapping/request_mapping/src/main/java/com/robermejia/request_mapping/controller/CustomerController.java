@@ -26,9 +26,9 @@ public class CustomerController {
     public List<Customer> getCustomers() {
         return customers;
     }
-    
+
     @RequestMapping(value = "/{username}", method = RequestMethod.GET)
-    //@GetMapping("/{username}")
+    // @GetMapping("/{username}")
     public Customer getCliente(@PathVariable String username) {
         for (Customer c : customers) {
             if (c.getUsername().equalsIgnoreCase(username)) {
@@ -37,16 +37,16 @@ public class CustomerController {
         }
         return null;
     }
-    
+
     @RequestMapping(method = RequestMethod.POST)
-    //@PostMapping
+    // @PostMapping
     public Customer postCliente(@RequestBody Customer customer) {
         customers.add(customer);
         return customer;
     }
-    
+
     @RequestMapping(method = RequestMethod.PUT)
-    //@PutMapping
+    // @PutMapping
     public Customer putCliente(@RequestBody Customer customer) {
         for (Customer c : customers) {
             if (c.getID() == customer.getID()) {
@@ -58,38 +58,36 @@ public class CustomerController {
         }
         return null;
     }
-    
+
     @RequestMapping(method = RequestMethod.PATCH)
-    //@PatchMapping
-    public Customer pathCliente(@RequestBody Customer customer){
+    // @PatchMapping
+    public Customer pathCliente(@RequestBody Customer customer) {
         for (Customer c : customers) {
-            if(c.getID() == customer.getID()){
-                if (customer.getName() != null) 
-                c.setName(customer.getName());
+            if (c.getID() == customer.getID()) {
+                if (customer.getName() != null)
+                    c.setName(customer.getName());
                 if (customer.getUsername() != null) {
                     c.setUsername(customer.getUsername());
                 }
                 if (customer.getPassword() != null) {
                     c.setPassword(customer.getPassword());
                 }
-                return c;     
+                return c;
             }
         }
         return null;
     }
-    
+
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    //@DeleteMapping("/{id}")
-    public Customer deleteCliente(@PathVariable int id){
+    // @DeleteMapping("/{id}")
+    public Customer deleteCliente(@PathVariable int id) {
         for (Customer c : customers) {
             if (c.getID() == id) {
                 customers.remove(c);
-		return c;
+                return c;
             }
         }
         return null;
     }
-        
+
 }
-
-
