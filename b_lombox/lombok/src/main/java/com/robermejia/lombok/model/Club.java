@@ -18,15 +18,10 @@ import lombok.Setter;
 //  Puedes personalizar el comportamiento con el atributo includeFieldNames = true.
 
 // @NoArgsConstructor => Crea contructor vacio
+//@Data
 @NoArgsConstructor
-
-// @AllArgsConstructor => Crea contructor con parametros
 @AllArgsConstructor
-
-// @Getter => Crea los Getters
 @Getter
-
-// @Setter => Crea los Setter
 @Setter
 
 // Clase POJO
