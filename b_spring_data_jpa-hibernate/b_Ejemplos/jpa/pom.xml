@@ -12,7 +12,7 @@
 	<artifactId>SpringJpaRelation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SpringJpaRelation</name>
-	<description>Jpa Relations</description>
+	<description>jpa</description>
 	<properties>
 		<java.version>24</java.version>
 	</properties>
