@@ -62,12 +62,11 @@
 ---
 
 ### 📤 Respuestas y Control de Salida
-
-| Anotación           | Descripción                                                                 |
-|---------------------|-----------------------------------------------------------------------------|
-| `@ResponseBody`     | Indica que el valor retornado se escribe directamente en la respuesta HTTP.|
-| `@ResponseStatus`   | Define el código HTTP que se devolverá con la respuesta.                   |
-
+| Elemento                | Descripción                                                                                              |
+| ----------------------- | -------------------------------------------------------------------------------------------------------- |
+| `@ResponseBody`         | Indica que el valor retornado se escribe directamente en la respuesta HTTP.                              |
+| `@ResponseStatus`       | Define el código HTTP que se devolverá con la respuesta.                                                 |
+| **`ResponseEntity<T>`** | **Clase que encapsula el cuerpo, los encabezados y el código de estado HTTP de una respuesta completa.** |
 ---
 
 ### 🧩 Controladores y Componentes Web
